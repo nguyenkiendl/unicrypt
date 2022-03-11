@@ -16,10 +16,11 @@
     --color-white: #fff;
     --color-light: #777;
     --color-black: #000;
+    --color-blue: #4845b4;
     --color-bg: #4845b4;
     --color-bg1: #7f7de0;
 
-    --container-width-lg: 84%;
+    --container-width-lg: 58%;
     --container-width-md: 90%;
     --container-width-sm: 94%;
     
@@ -33,16 +34,29 @@ body{
     background: var(--color-white);
 }
 
-.container {
+.container{
     width: var(--container-width-lg);
     margin: 0 auto;
 }
 
-section h1 {
+section{
+    position: relative;
+    padding: 5rem 0;
+}
+
+section h1{
     margin-bottom: 4rem;
 }
-section h2 {
+section h2{
     margin-bottom: 2rem;
+}
+
+section h3{
+    font-weight: 500;
+}
+
+section h4{
+    font-weight: 400;
 }
 
 p{
@@ -64,7 +78,7 @@ h1{
 }
 
 h2{
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 2rem;
 }
 
@@ -169,6 +183,7 @@ header{
 .system{
     position: relative;
     margin-top: -140px;
+    padding: 0;
 }
 
 .system__container{
@@ -189,12 +204,11 @@ header{
     padding: 2rem 3rem;
     box-shadow: 0px 5px 11px  #c7c7c7;
     text-align: center;
+    transition-duration: 400ms;
 }
 
 .system__box:hover{
-    margin-top:-40px;
-    animation-name: moveUp;
-    animation-duration: 400ms;
+    transform: translateY(-20px);
 }
 
 .system__icon img{
@@ -205,8 +219,8 @@ header{
 
 /* ======== Introduce ========*/
 
-.introduce{
-    padding: 3rem 0;
+.introduce h2{
+    color: var(--color-black);
 }
 
 .introduce__container{
@@ -215,4 +229,162 @@ header{
 
 .introduce__left, .introduce__right{
     width: 50%;
+}
+
+.introduce h3{
+    color: #4845b4;
+}
+
+/* ======== Whychoose ========*/
+
+.whychoose{
+    background: url(../images/bgr-unc-inventment.png);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--color-white);
+    position: relative;
+    padding: 7rem 0;
+}
+
+.whychoose__container:after{
+    content: '';
+    background: url(../images/inv-img.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.whychoose p{
+    color: #bab9ec;
+    margin-bottom: 3rem;
+}
+
+.whychoose__left{
+    width: 66%;
+}
+
+.whychoose__list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.whychoose__item{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.whychoose__item p{
+    color: var(--color-white);
+}
+
+/* ======== Features ========*/
+
+.feature{
+    position: relative;
+}
+
+.feature__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.feature__left img{
+    margin-left: -100px;
+}
+
+.feature__right h4{
+    color: var(--color-blue);
+}
+
+.feature__right h2{
+    color: var(--color-black);
+}
+
+.feature__item{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+}
+
+.feature__item h3{
+    color: var(--color-black);
+}
+
+.feature__icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-bg1);
+    text-align: center;
+    border-radius: 100%;
+    width: 120px;
+    height: 120px;
+}
+
+/* ======== Happenning ========*/
+
+.happenning{
+    background: url(../images/bgr-happenning.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--color-white);
+}
+
+.happenning p{
+    color: #bab9ec;
+}
+
+.happenning__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.happenning__countdown{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-white);
+    padding: 2rem 3rem;
+}
+
+.happenning__countdown .times{
+    width: 80px;
+    text-align: center;
+}
+
+.happenning__countdown h2{
+    color: var(--color-black);
+}
+.happenning__countdown h4{
+    color: var(--color-blue);
+}
+
+.happenning__countdown h2{
+    margin-bottom: .7rem;
+}
+
+.happenning__list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 3rem 0 1.5rem 0;
+}
+
+.happenning__item h4{
+    font-size: 1.2rem;
+    margin-bottom: .7rem;
+    text-transform: uppercase;
+}
+
+.happenning__item p{
+    font-size: .9rem;
 }
