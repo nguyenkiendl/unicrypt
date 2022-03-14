@@ -17,6 +17,9 @@
     --color-light: #777;
     --color-black: #000;
     --color-blue: #4845b4;
+    --color-blue1: #0ba1d6;
+    --color-blue2: #5990a4;
+    
     --color-bg: #4845b4;
     --color-bg1: #7f7de0;
 
@@ -60,8 +63,13 @@ section h4{
 }
 
 p{
-    list-style: 1.2;
+    line-height: 1.4;
     margin-bottom: 1.2rem;
+    font-size: 1.2rem;
+}
+
+a{
+    transition: var(--transition);
 }
 
 h1,
@@ -70,6 +78,7 @@ h3,
 h4,
 h5 {
     line-height: 1.2;
+    font-weight: 500;
 }
 
 h1{
@@ -98,6 +107,7 @@ a{
 
 img{
     max-width: 100%;
+    height: auto;
 }
 
 .btn{
@@ -387,4 +397,161 @@ header{
 
 .happenning__item p{
     font-size: .9rem;
+}
+
+/* ======== Charts ========*/
+
+.charts{
+    position: relative;
+}
+
+.charts h2,
+.charts h4{
+    text-align: center;
+}
+
+.charts h2{
+    color: var(--color-black);
+    margin-bottom: 3rem;
+}
+
+.charts h4{
+    color: var(--color-blue);
+}
+
+.charts h3{
+    text-align: center;
+    color: var(--color-black);
+}
+
+.charts__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    width: 90%;
+}
+
+.chart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.charts__left .chart__info{
+    margin: 2rem 0 0 3rem;
+    padding: 0 1rem 0 0;
+ }
+
+.charts__left .chart__item span{
+    left: -25px;
+}
+
+.charts__right .chart__info{
+    text-align: right;
+    margin: 2rem 3rem 0 0;
+    padding: 0 0 0 1rem;
+    border-left: 1px solid var(--color-light);
+}
+
+.charts__right .chart__image{
+    text-align: right;
+}
+
+.charts__right .chart__item span{
+    right: -25px;
+}
+
+.chart__item{
+    position: relative;
+}
+
+.chart__item h3{
+    color: var(--color-black);
+    margin-bottom: .7rem;
+}
+
+.chart__item p{
+    color: var(--color-primary);    
+}
+
+.chart__item span{
+    position: absolute;
+    content: '';
+    width: 13px;
+    height: 13px;
+    top: 10px;
+}
+
+.chart__item .blue{
+    background: var(--color-blue);
+}
+.chart__item .success{
+    background: var(--color-success);
+}
+.chart__item .blue1{
+    background: var(--color-blue1);
+}
+.chart__item .warning{
+    background: var(--color-warning);
+}
+.chart__item .danger{
+    background: var(--color-danger);
+}
+.chart__item .blue2{
+    background: var(--color-blue2);
+}
+
+/* ======== Benefits ========*/
+
+.benefits{
+    position: relative;
+    background: url(../images/bgr-benefits.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.benefits h2,
+.benefits h4{
+    text-align: center;
+    color: var(--color-white);
+}
+
+.benefits h2{
+    margin-bottom: 4rem;
+}
+
+.benefits p{
+    color: #bab9ec;
+}
+
+.benefits__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem
+}
+
+.benefits__left img{
+    margin-left: -100px;
+}
+
+.benefit{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+.benefit__icon{
+    background: var(--color-white);
+    color: var(--color-blue);
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.benefit__icon i{
+    font-size: 28px;
 }
