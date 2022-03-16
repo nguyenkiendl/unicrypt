@@ -118,6 +118,8 @@ img{
     border: 1px solid transparent;
     border-radius: 20px;
     font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
 .btn:hover{
@@ -769,22 +771,28 @@ header{
     text-align: center;
 }
 
-.member__image{
-    background: url(../images/bgr-team-col.png) no-repeat center center;
-    padding: 7px 15px;
-}
-
-.member__image img{
-    border: 10px solid var(--color-white);
+.member__box{
     border-radius: 100%;
     width: 200px;
     height: 200px;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
-    
+    border: 10px solid var(--color-white);
+    overflow: hidden;
+}
+
+.member__image{
+    background: url(../images/bgr-team-col.png) no-repeat center center;
+    padding: 7px 15px;
+    transition-duration: 1s;
+}
+
+.member__image img{
+    transition-duration: 400ms;
+}
+
+.member__image:hover img{
+    transform: scale(1.2);
+   
 }
 
 .member__info h3,
@@ -794,4 +802,308 @@ header{
 
 .member__info h3{
     margin-bottom: 1rem;
+}
+
+/* ======== Faqs ========*/
+
+.faqs{
+    position: relative;
+}
+
+.faqs h2,
+.faqs h4{
+    text-align: center;
+}
+
+.faqs h2{
+    color: var(--color-black);
+}
+
+.faqs h4{
+    color: var(--color-blue);
+}
+
+.faqs__tabs{
+    text-align: center;
+    position: relative;
+    display: block;
+}
+
+.faqs__tabs ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.faqs__tabs ul li{
+    display: flex;
+}
+
+.faqs__tabs ul li a{
+    color: #aaa;
+    font-weight: 600;
+    border-bottom: 1px solid #aaa;
+    padding: 1rem 1.5rem;
+}
+
+.faqs__tabs ul li a.active{
+    color: var(--color-black);
+    border-color: var(--color-blue);
+}
+
+.faq{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem 0;
+    display: none;
+}
+
+.faq.active{
+    display: grid;
+}
+
+.faq__content h3{
+    color: var(--color-black);
+}
+
+/* ======== Partners ========*/
+
+.partners{
+    position: relative;
+    background: url(../images/bgr-brands-logo.png) no-repeat center center;
+}
+
+.partners h2,
+.partners h4{
+    text-align: center;
+    color: var(--color-white);
+}
+
+.partners h2{
+    margin-bottom: 3rem;
+}
+
+.partners__container{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+}
+
+/* ======== Contact ========*/
+
+.contact{
+    padding-bottom: 0;
+}
+
+.contact h2{
+    color: var(--color-black);
+}
+
+.contact h4{
+    color: var(--color-blue);
+}
+
+.contact p{
+    margin-bottom: 3rem;
+}
+
+.contact__container{
+    background: url(../images/bgr-contact-area.png) no-repeat center center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 5rem;
+}
+
+.contact__social li{
+    margin-bottom: 1rem;
+}
+
+.contact__social li a{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact__social li a span{
+    background: var(--color-bg);
+    color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+}
+
+.contact__social li a p{
+    margin-bottom: 0;
+}
+
+.contact__form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+}
+
+.form__name{
+    display: flex;
+    gap: 1.7rem;
+}
+
+.form__name input[type="text"],
+.form__name input[type="email"]
+{
+    width: 50%;
+}
+
+input, textarea{
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 3px 10px 3px rgba(0, 0, 0, .1);
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.form__submit{
+    display: block;
+}
+
+.form__submit .btn{
+    min-width: 170px;
+}
+
+/* subscribe */
+
+.subscribe__container{
+    position: relative;
+    padding: 2rem 0 0 0;
+}
+
+.subscribe__box{
+    padding: 3rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-bg1);
+    width: 90%;
+    margin: 0 auto -75px;
+    z-index: 1;
+    position: relative;
+}
+
+.subscribe__box h2{
+    color: var(--color-white);
+    font-size: 2.2rem;
+}
+
+.subscribe__form{
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+}
+
+.subscribe__form input[type="email"]{
+    background: var(--color-white);
+    padding: 1.3rem 1.5rem;
+    line-height: 1.2;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+.subscribe__form input[type="submit"]{
+    position: absolute;
+    right: 5px;
+    width: 50px;
+    height: 100%;
+    color: var(--color-primary);
+    font-size: 2rem;
+    background-image: url("data:image/svg+xml,<svg width='16' height='8' viewBox='0 0 16 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M12 3H0v2h12v3l4-4-4-4v3z' fill='current' style='    fill: rgba(233, 74, 138, 1);'></path></svg>");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* placeholder style */
+
+::-webkit-input-placeholder { /* Edge */
+    color: #777;
+    font-weight: 400;
+    font-family: 'Quicksand', sans-serif;
+    opacity: .7;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #777;
+    font-weight: 400;
+    font-family: 'Quicksand', sans-serif;
+    opacity: .7;
+}
+
+::placeholder {
+    color: #777;
+    font-weight: 400;
+    font-family: 'Quicksand', sans-serif;
+    opacity: .7;
+}
+
+/* ======== Footer ========*/
+
+.footer{
+    position: relative;
+    background: var(--color-bg);
+    padding: 7rem 0 0 0;
+}
+
+.footer::before{
+    content: '';
+    background: url(../images/bgr-footer.png) no-repeat center center;
+    position: absolute;
+    top: -78px;
+    width: 100%;
+    height: 78px;
+}
+
+.footer__container{
+    display: grid;
+    grid-template-columns: 2fr repeat(2, 1fr) 1.5fr;
+    gap: 1.2rem;
+    padding: 2rem 0;
+    color: var(--color-white);
+}
+
+.footer h4{
+    margin-bottom: 2rem;
+}
+
+.footer a{
+    display: flex;
+    gap: 1.2rem;
+    color: var(--color-white);
+    font-size: 1.2rem;
+}
+
+.footer__social ul{
+    display: flex;
+    gap: 1.2rem;
+}
+
+.footer__social i{
+    font-size: 1.5rem;
+}
+
+.footer__copyright{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-light);
+    color: var(--color-white);
+}
+
+.footer__menu ul{
+    display: flex;
+    gap: 2rem;
 }
