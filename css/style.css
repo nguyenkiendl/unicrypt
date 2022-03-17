@@ -62,6 +62,10 @@ section h4{
     font-weight: 400;
 }
 
+button{
+    cursor: pointer;
+}
+
 p{
     line-height: 1.4;
     margin-bottom: 1.2rem;
@@ -173,6 +177,11 @@ nav .btn{
 
 .nav__menu li a{
     padding: 1rem .5rem;
+    display: block;
+}
+
+nav button{
+    display: none;
 }
 
 /* ======== HEADER ========*/
@@ -263,7 +272,7 @@ header{
     content: '';
     background: url(../images/inv-img.png);
     background-repeat: no-repeat;
-    background-position: right;
+    background-position: 0 center;
     width: 40%;
     height: 100%;
     position: absolute;
@@ -1106,4 +1115,281 @@ input, textarea{
 .footer__menu ul{
     display: flex;
     gap: 2rem;
+}
+
+/*=============== Reponsive Mobile ===============*/
+/*=============== Tablet ===============*/
+@media screen and (max-width: 1024px) {
+    .container{
+        width: var(--container-width-md);
+    }
+
+    section{
+        padding: 3rem 0 !important;
+    }
+
+    h1{
+        font-size: 2.2rem;
+        margin-bottom: 2.2rem;
+    }
+    
+    h2{
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    h3{
+        font-size: 1.4rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    h4{
+        font-size: 1.2rem;
+        margin-bottom: .5rem;
+    }
+
+    /*============ Navbar ==========*/
+
+    nav .nav__start{
+        display: none;
+    }
+
+    nav button{
+        background: transparent;
+        color: var(--color-white);
+        font-size: 1.8rem;
+    }
+
+    #menu-btn{
+        position: fixed;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        right: 3rem;
+        top: 50px;
+        z-index: 999;
+    }
+
+    .menu-btn-icon{
+        position: relative;
+        display: inline-block;
+        width: 30px;
+        height: 2px;
+        background: var(--color-white);
+        margin: 15px 0;
+        transition: var(--transition);
+    }
+
+    #menu-btn.active .menu-btn-icon{
+        background: transparent;
+    }
+
+    #menu-btn.active .menu-btn-icon::before{
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    #menu-btn.active .menu-btn-icon::after{
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .menu-btn-icon::before{
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: var(--color-white);
+        top: -7px;
+        left: 0;
+        transition: var(--transition);
+    }
+
+    .menu-btn-icon::after{
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: var(--color-white);
+        top: 7px;
+        left: 0;
+        transition: var(--transition);
+    }
+
+    .nav__menu{
+        position: fixed;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        background: var(--color-bg);
+        padding-top: 0;
+        width: 100vw;
+        height: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        overflow: hidden;
+        transition: var(--transition);
+        overflow-y: scroll;
+    }
+
+    .nav__menu.show{
+        padding-top: 100px;
+        height: 100vh;
+        display: flex;
+    }
+
+    body.no-scroll{
+        overflow: hidden;
+    }
+
+    /*============ Header ==========*/
+
+
+    header{
+        padding: 150px 0 225px 0;
+    }
+
+    /*============ Feature ==========*/
+    .feature__left img {
+        margin-left: 0;
+    }
+
+    /*============ Benefits ==========*/
+
+    .benefits__left img {
+        margin-left: 0;
+    }
+}
+
+/*=============== Phone ===============*/
+@media screen and (max-width: 768px) {
+    .container{
+        width: var(--container-width-sm);
+    }
+
+    /*============ System ==========*/
+    .system__container {
+        display: block;
+    }
+
+    /*============ Introduce ==========*/
+
+    .introduce__container{
+        display: block;
+    }
+
+    /*============ Whychoose ==========*/
+
+    .whychoose__left{
+        width: 100%;
+    }
+
+    .whychoose__container:after {
+        display: none;
+    }
+
+    /*============ Feature ==========*/
+
+    .feature__container {
+        display: block;
+    }
+
+    /*============ Happenning ==========*/
+
+    .happenning__container{
+        display: block;
+    }
+
+    /*============ Charts ==========*/
+
+    .charts__container{
+        display: block;
+    }
+
+    .chart {
+        display: grid;
+    }
+
+    .chart__item {
+        display: flex;
+        gap: 1.2rem;
+    }
+    .charts__right .chart__info {
+        order: 2;
+        border: none;
+    }
+
+    .charts__right .chart__info {
+        margin: 2rem 0 0 3rem;
+        padding: 0 1rem 0 0;
+    }
+
+    .charts__right .chart__item span {
+        right: auto;
+        left: -25px;
+    }
+
+    /*============ Benefits ==========*/
+
+    .benefits__container {
+        display: block;
+    }
+
+    /*============ Howitgo ==========*/
+
+    .howitgoes__container {
+        display: block;
+    }
+
+    .howitgo {
+        max-width: 50%;
+        margin: 0 auto;
+    }
+
+    .howitgo:nth-child(odd) {
+        padding-right: 0;
+    }
+
+    .howitgo:nth-child(odd):before {
+        left: -2rem;
+    }
+
+    .howitgo:nth-child(even):before {
+        position: absolute;
+        content: '';
+        width: 5px;
+        height: 100%;
+        right: -5px;
+        left: -2rem;
+        top: 3%;
+        padding-bottom: 3rem;
+        background-image: url("data:image/svg+xml,<svg width='5' height='100%' version='1.1' xmlns='http://www.w3.org/2000/svg'><line stroke-dasharray='10, 5' x1='1' y1='100%' x2='1' y2='1' style='stroke: rgba(209, 209, 209, 1);stroke-width: 5px;'></line></svg>");
+        z-index: -1;
+    }
+
+    .howitgo:nth-child(2):after {
+        left: -2rem;
+    }
+
+    .howitgo:nth-child(even) {
+        padding-left: 0;
+        padding-top: 0;
+    }
+
+    
+
+    .howitgo:nth-child(odd) .howitgo__title:before {
+        left: -2rem;
+    }
+
+    .howitgo:nth-child(odd) .howitgo__title::after {
+        left: -2rem;
+        transform: translate(50%, 0);
+    }
+
+    .howitgo:nth-child(even) .howitgo__title::before {
+        left: -2rem;
+    }
+    
 }

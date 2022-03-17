@@ -30,5 +30,16 @@ var $$ = document.querySelectorAll.bind(document);
             activeTab(this);
         })
     });
+
+    // show/hide nav menu
+
+
+
+    $('#menu-btn').addEventListener('click', function(e){
+        e.preventDefault();
+        $('body').classList.toggle('no-scroll');
+        this.classList.toggle('active');
+        $('.nav__menu').classList.toggle('show');
+    });
 })()
 
