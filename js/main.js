@@ -35,7 +35,7 @@ var $$ = document.querySelectorAll.bind(document);
     const tabcontrol = $$('.faqs__control');
     const showClass = 'show';
     const showTab = (t) => {
-         if( t.classList.contains(activeClass) ){
+        if( t.classList.contains(activeClass) ){
             let cTab = t.dataset.tab;
             t.classList.remove(activeClass);
             $(cTab).classList.remove(showClass);
@@ -75,5 +75,39 @@ var $$ = document.querySelectorAll.bind(document);
         this.classList.toggle('active');
         $('.nav__menu').classList.toggle('show');
     });
+
+
+    // animation transiton + js
+
+    const isMobile = function() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    }
+    
+
+    if(!isMobile()){
+    const elAnimation = $$('.ez');
+
+    const options = {
+        rootMargin: '0px',
+        threshold: 0.25
+    }
+    const observer = new IntersectionObserver( (entries) => {
+        entries.forEach( (entry) => {   
+            if( entry.isIntersecting ){
+                el = entry.target;
+                if( el.classList.contains('ez') ){
+                    el.classList.add(el.dataset.ezName);
+                }
+                observer.unobserve(el);
+            }
+        })
+    }, options);
+
+
+    elAnimation.forEach( (el) => {
+        el.classList.add('animated');
+        observer.observe(el)
+    });
+}
 })()
 
